@@ -25,6 +25,8 @@ This project was built in Unity version 6.
         - double click on `RatDreamsGame_MacOSBuild` app
 4. Enjoy the game!
 
+**Note:** I only have a Mac and did not test the Windows build. If you run into troubles with a Windows build, I recommend opening the project in Unity.
+
 ## 🎮 Gameplay
 You are a rat dreaming of abundance! Collect food, avoid traps, and gain power advantages by eating what a rat normally wouldn't.
 
