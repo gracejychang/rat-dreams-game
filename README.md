@@ -1,77 +1,96 @@
 # RatDreamsGame
 
-## About  
+## 🐭 About  
 This game is inspired by classic "arcade" vertical shooter games, featuring a fun rat theme thanks to a recent trip to New York & one of my favourite animated films, Ratatouille.
 
-## Approach
+## 💻 How to Run The Game
+### Running in Unity Editor  
+1. Clone the repository.  
+2. Open the project folder in Unity (version 6.2 recommended).  
+3. Open the main scene (`Assets/Scenes/SampleScene`).  
+4. Press the **Play** button in the editor to start the game.
+5. Enjoy the game!
+
+### Running a Built Executable  
+1. Clone the repository
+2. Open the project folder, `rat-dreams-game.
+3. Depending on your platform:
+    - **Windows**
+        - open `Builds/Windows`  
+        - open `RatDreamsGame_WindowsBuild` folder and open `RatDreamsGame.exe`.  
+    - **Apple**
+        - open `Build/MacOS`
+        - double click on `RatDreamsGame_MacOSBuild` app
+4. Enjoy the game!
+
+## 🎮 Gameplay
+You are a rat dreaming of abundance! Collect food, avoid traps, and gain power advantages by eating what a rat normally wouldn't.
+
+### Game states
+- on game start:
+    - press `N` to **start a new game** (this will reset inventory, points, and power-ups)
+    - press `L` to **load** from the existing game (this will read from `inventory.json`)
+- press `P` to pause the game
+    - while paused:
+        - press `R` to **resume**
+        - press `S` to **save and quit**
+- on game over
+    - press `R` to replay the game
+
+### Game controls
+- `←` / `→` Arrow Keys – Move the Rat left and right
+- `Spacebar` – Fire a projectile (after collecting the 🌶️**Hot Sauce** PowerUp)
+    - Once a Hot Sauce is collected, press Spacebar to activate the power.
+    - The power lasts for 4 seconds before you need to use another hot sauce to power-up again.
+
+PowerUps like **Hot Sauce** can enable new abilities — collect them to gain an advantage for a period of time!
+
+## 🧠 Approach
 I wanted to explore how inventory systems in games by building a simple, end-to-end game. I thought about a lot of games with cool inventory systems: Zelda, MarioKart, even those early 2000s web games where you have to dress up a character for a party or fashion show. I eventually landed on a system similar to Super Mario, a classic inventory based game where the player can earn points or gain/use powers based on collectible objects.
 
 ### Inventory System
-My main goal was to make the system easy to scale and maintain. I did this by keeping concerns separate and taking advantage of Unity's built-in **ScriptableObject**.
+My main goal was to make the system scalable, maintanable, and easy to work with inside Unity. I did this by keeping concerns separate and taking advantage of Unity's built-in **ScriptableObject**.
 
 #### InventoryManager
-The **InventoryManager** kept track of all inventory logic, such as total points, power ups, and all items that has been collected by the player.
+The **InventoryManager** kept track of all inventory logic, such as total points, power ups, and the items that has been collected or used by the player.
 
 #### Data Structure
-This system was built with scalability in mind, in particular 
+I took advantage of Unity's  **ScriptableObject** to define data types, which allowed for the following:
 
-By using **ScriptableObject** to define our data types, we've made the system:
+**Scalability**: We can support or add new item types (e.g., FoodItem, PowerUpItem) without changing existing code.
 
-**Easy to Scale**: We can support or add new item types (e.g., FoodItem, PowerUpItem) without changing existing code.
-
-**Modular**: Items are standalone assets, not tied to GameObjects, so can be reused across scenes.
+**Modular**: Items are standalone assets, not tied to `GameObjects`, so can be reused across scenes.
 
 **Editor-Friendly**: Values can be tweaked directly in the Unity Inspector.
 
 **Efficient**: Uses less memory than scene-bound objects and keeps runtime logic clean.
 
 #### Trade-Offs
-To manage all available items, an **InventoryDatabase** acts as a central reference point for item definitions. While this results in a clean, extensible architecture, it also introduces some added complexity — especially around saving and loading inventory data.
+To manage all available items, an **InventoryDatabase** acts as a central reference point for item definitions. While this results in a clean, extensible architecture, it also introduced added complexity — especially around saving and loading inventory data.
 
 Specifically, serializing/deserializing the `inventory.json` file required handling two separate data layers: runtime inventory state and asset-based item definitions. To keep things manageable, the data was split into two clearly defined folders:
 
-#### - Items Folder (Assets/Scripts/Inventory/Items/)
-Contains all **ScriptableObject** item definitions and the InventoryDatabase asset that links them together. This acts as the master list of items available to the game.
+#### 📁 Items Folder (Assets/Scripts/Inventory/Items/)
+Contains all **ScriptableObject** item definitions and the `InventoryDatabase` asset that links them together. This acts as the master list of items available to the game.
 
-#### - Data Folder (Assets/Scripts/Inventory/Data/)
-Stores JSON files or other serialized data related to the player’s inventory state, item definitions, or game progression (if applicable). This allows saving/loading and debugging outside the Unity runtime if needed.
+#### 📁 Data Folder (Assets/Scripts/Inventory/Data/)
+Stores JSON files or other serialized data related to the player’s inventory state and item definitions. This allows saving/loading and debugging outside the Unity runtime if needed.
 
 Additionally, it’s worth noting that **ScriptableObject** is Unity-specific — so if we ever need to migrate to a different engine or framework, the inventory architecture would need to be redesigned.
 
-## Additional Systems  
-
+## 🛠️ Additional Systems  
 - **Game State:** Manages and tracks the current state of the game (e.g., playing, paused, game over).  
 - **Collisions:** Handles object interactions, such as pickups, damage, and power-ups.  
 - **Object Spawner:** Randomly spawns game objects into the scene to keep gameplay dynamic.
 - **Sprites:** Custom sprites created using [Pixilart](https://www.pixilart.com/draw).
 
-
-## To Improve
-**Unit Tests** Due to time contraints, I did not include unit tests in the code.
+## 🚧 To Improve
+**Unit Tests** Due to time contraints, unit tests weren't included.
 **Max/Min Screen Width & Height** A lot of this is hardcoded - this should ideally be dynamic based on screen resolution or camera settings.
 
-## How to Run The Game
-### Running in Unity Editor  
-1. Clone the repository.  
-2. Open the project folder in Unity (version 6.2 recommended).  
-3. Open the main scene (`Assets/Scenes/MainScene.unity` or your main scene file).  
-4. Press the **Play** button in the editor to start the game.
-
-### Running a Built Executable  
-1. Navigate to the `Builds/Windows` or `Builds/MacOS` folder in the repository.  
-2. On Windows, run `RatDreamsGame.exe`.  
-3. On MacOS, open the executable in the `Builds/MacOS` folder.  
-4. Enjoy the game!
-
-## Controls / Gameplay
-- `←` / `→` Arrow Keys – Move the Rat left and right
-- `Spacebar` – Fire a projectile (only after collecting the Hot Sauce PowerUp)
-
-PowerUps like Hot Sauce enable new abilities — collect them to gain an advantage!
-
-## Found a Bug?
+## 🐛 Found a Bug?
 **See any odd behaviours?**
 Feel free to open a PR describing the bug, and I'll get to fixing it!
 
-## Thanks for Reading!
+## 🙏 Thanks for Reading!
 Happy gaming 🚀
