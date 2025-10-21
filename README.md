@@ -50,13 +50,13 @@ You are a rat dreaming of abundance! Collect food, avoid traps, and gain power a
 PowerUps like **Hot Sauce** can enable new abilities — collect them to gain an advantage for a period of time!
 
 ## 🧠 Approach
-I wanted to explore how inventory systems in games by building a simple, end-to-end game. I thought about a lot of games with cool inventory systems: Zelda, MarioKart, even those early 2000s web games where you have to dress up a character for a party or fashion show. I eventually landed on a system similar to Super Mario, a classic inventory based game where the player can earn points or gain/use powers based on collectible objects.
+I wanted to explore inventory systems in games by building a simple, end-to-end game. I thought about a lot of games with cool inventory systems: Zelda, MarioKart, even those early 2000s web games where you have to dress up a character for a party or fashion show. I eventually landed on a system similar to Super Mario, a classic inventory based game where the player can earn points or gain/use powers based on collectible objects.
 
 ### Inventory System
 My main goal was to make the system scalable, maintanable, and easy to work with inside Unity. I did this by keeping concerns separate and taking advantage of Unity's built-in **ScriptableObject**.
 
 #### InventoryManager
-The **InventoryManager** kept track of all inventory logic, such as total points, power ups, and the items that has been collected or used by the player.
+The **InventoryManager** kept track of all inventory logic, such as total points, power ups, and the items that have been collected or used by the player.
 
 #### Data Structure
 I took advantage of Unity's  **ScriptableObject** to define data types, which allowed for the following:
