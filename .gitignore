@@ -4,11 +4,11 @@
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-[Bb]uild/
-[Bb]uilds/
 [Ll]ogs/
 MemoryCaptures/
 UserSettings/
+# Ignore everything inside Builds folders recursively
+[Bb]uilds/**
 
 # Crash reports
 sysinfo.txt
@@ -54,14 +54,16 @@ desktop.ini
 
 # ----------------------------
 # Optional - Ignore Build Artifacts
+# We don't ignore these because we want to include
+# runnable builds in our repository
 # ----------------------------
-*.apk
-*.aab
-*.exe
-*.app
-*.dll
-*.pdb
-*.mdb
+# *.apk
+# *.aab
+# *.exe
+# *.app
+# *.dll
+# *.pdb
+# *.mdb
 
 # Ignore generated AssetBundle files
 *.unity3d
@@ -72,3 +74,16 @@ desktop.ini
 # ----------------------------
 .idea/
 *.sln.iml
+
+# Un-ignore the Builds folder itself
+!Builds/
+
+# But do not ignore these build folders and their contents
+!Builds/Windows/
+!Builds/Windows/**
+
+!Builds/MacOS/
+!Builds/MacOS/**
+
+# Ignore DebugInfo in build folders
+**/RatDreamsGame_BurstDebugInformation_DoNotShip/
