@@ -1,21 +1,20 @@
 # RatDreamsGame
 
 ## ABOUT  
-This game is inspired by classic "arcade" vertical shooter games, featuring a fun rat theme.
+This game is inspired by classic "arcade" vertical shooter games, featuring a fun rat theme thanks to a recent trip to New York & one of my favourite animated films, Ratatouille.
 
----
 
 ## APPROACH  
-I wanted to explore how inventory systems work in games by building a simple, end-to-end game. Drawing from classic inventory-based games like Super Mario, the player can earn points or gain powers based on collectible objects.
-
----
+I wanted to explore how inventory systems in games by building a simple, end-to-end game. I thought about a lot of games with cool inventory systems: Zelda, MarioKart, even those early 2000s web games where you have to dress up a character for a party or fashion show. I eventually landed on a system similar to Super Mario, a classic inventory based game where the player can earn points or gain/use powers based on collectible objects.
 
 ## Inventory System
+My main goal was to make the system easy to scale and maintain. I did this by keeping concerns separate and taking advantage of Unity's built-in **ScriptableObject**.
+
 ### InventoryManager
 The **InventoryManager** kept track of all inventory logic, such as total points, power ups, and all items that has been collected by the player.
 
 ### Data Structure
-This system was built with scalability and reusability in mind, in particular taking advantage of Unity's built-in **ScriptableObject**.
+This system was built with scalability in mind, in particular 
 
 By using **ScriptableObject** to define our data types, we've made the system:
 
@@ -45,15 +44,15 @@ Additionally, it’s worth noting that **ScriptableObject** is Unity-specific �
 ## Additional Systems  
 
 - **Game State:** Manages and tracks the current state of the game (e.g., playing, paused, game over).  
-- **Collisions:** Handles interactions between game objects, such as player pickups or enemy hits.  
+- **Collisions:** Handles object interactions, such as pickups, damage, and power-ups.  
 - **Object Spawner:** Randomly spawns game objects into the scene to keep gameplay dynamic.
-- **Sprites:** Custom sprite objects drawn on https://www.pixilart.com/draw
+- **Sprites:** Custom sprites created using [Pixilart](https://www.pixilart.com/draw).
 
 ---
 
 ## TO IMPROVE
 **Unit Tests** Due to time contraints, I did not include unit tests in the code.
-**Max/Min Screen Width & Height** A lot of this is hardcoded - this should ideally be dynamic based on screen or camera placement.
+**Max/Min Screen Width & Height** A lot of this is hardcoded - this should ideally be dynamic based on screen resolution or camera settings.
 
 ## HOW TO RUN  
 
@@ -68,6 +67,12 @@ Additionally, it’s worth noting that **ScriptableObject** is Unity-specific �
 2. On Windows, run `RatDreamsGame.exe`.  
 3. On MacOS, open the executable in the `Builds/MacOS` folder.  
 4. Enjoy the game!
+
+## GAME MECHANICS
+- ← / → Arrow Keys – Move the Rat left and right
+- Spacebar – Fire a projectile (only after collecting the Hot Sauce PowerUp)
+
+PowerUps like Hot Sauce enable new abilities — collect them to gain an advantage!
 
 ---
 
