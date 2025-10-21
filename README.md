@@ -3,10 +3,12 @@
 ## 🐭 About  
 This game is inspired by classic "arcade" vertical shooter games, featuring a fun rat theme thanks to a recent trip to New York & one of my favourite animated films, Ratatouille.
 
+This project was built in Unity version 6.
+
 ## 💻 How to Run The Game
 ### Running in Unity Editor  
 1. Clone the repository.  
-2. Open the project folder in Unity (version 6.2 recommended).  
+2. Open the project folder in Unity (version 6 recommended).  
 3. Open the main scene (`Assets/Scenes/SampleScene`).  
 4. Press the **Play** button in the editor to start the game.
 5. Enjoy the game!
@@ -83,6 +85,22 @@ Additionally, it’s worth noting that **ScriptableObject** is Unity-specific �
 - **Collisions:** Handles object interactions, such as pickups, damage, and power-ups.  
 - **Object Spawner:** Randomly spawns game objects into the scene to keep gameplay dynamic.
 - **Sprites:** Custom sprites created using [Pixilart](https://www.pixilart.com/draw).
+
+### Why these additions?
+I chose these additional systems because they represent a knowledge in basic game mechanics that can be used for both tightly-scoped, small games or in large, complex systems. As a developer, I always look to produce the "simplest" solution to complex problems. I think it is easy to over-engineer, but it is very difficult to design systems that are simple & easy to understand. I aim for this mindset because simplicity in software typically means it will be easier to understand, scale, or extend over time.
+
+I’m also passionate about building UIs that feels intuitive to the user. A game like Flappy Bird, which is incredibly simple but captured many people's attentions, is something I find very interesting. With some knowledge and an interest in human-computer interaction, I designed this game to leverage existing mental models of other games. For example:
+    - A familiar vertical gameplay format where objects fall toward the player
+    - Arrow buttons to move players and use of the spacebar to attack — standard mechanics in many games
+
+This approach aligns with key HCI principles such as recognition over recall & leveraging existing mental models, making the game more accessible and reducing the cognitive load for players.
+
+## 📝 Reflection
+This project reflects who I am as a developer: someone who values thoughtful design, robust architecture, and forward-thinking solutions. Many of the systems were built with scalability in mind — for example, several architectural decisions focused on how easy it would be to add new collectible items in the future. I also care about good user experience: I value intuitiveness and interfaces that are easy/fun to use. I care a lot about end users, and every experience I build to bring some type of delight or ease.
+
+This project also represents who I am outside being a developer. I love expressing myself through creative endeavours, so it was only natural that I made custom sprites for this project. From visual arts and writing, to playing music and baking, these are all creative pursuits I have made outside of my work as a software developer.
+
+I've found that game and AR/VR development to be one of the most fun and fulfilling ways to combine creativity and technology.
 
 ## 🚧 To Improve
 **Unit Tests** Due to time contraints, unit tests weren't included.
