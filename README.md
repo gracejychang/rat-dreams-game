@@ -3,7 +3,6 @@
 ## About  
 This game is inspired by classic "arcade" vertical shooter games, featuring a fun rat theme thanks to a recent trip to New York & one of my favourite animated films, Ratatouille.
 
-
 ## Approach
 I wanted to explore how inventory systems in games by building a simple, end-to-end game. I thought about a lot of games with cool inventory systems: Zelda, MarioKart, even those early 2000s web games where you have to dress up a character for a party or fashion show. I eventually landed on a system similar to Super Mario, a classic inventory based game where the player can earn points or gain/use powers based on collectible objects.
 
@@ -64,14 +63,15 @@ Additionally, it’s worth noting that **ScriptableObject** is Unity-specific �
 3. On MacOS, open the executable in the `Builds/MacOS` folder.  
 4. Enjoy the game!
 
-## Game Mechanics
-- ← / → Arrow Keys – Move the Rat left and right
-- Spacebar – Fire a projectile (only after collecting the Hot Sauce PowerUp)
+## Controls / Gameplay
+- `←` / `→` Arrow Keys – Move the Rat left and right
+- `Spacebar` – Fire a projectile (only after collecting the Hot Sauce PowerUp)
 
 PowerUps like Hot Sauce enable new abilities — collect them to gain an advantage!
 
-## Thanks for Reading!
+## Found a Bug?
 **See any odd behaviours?**
 Feel free to open a PR describing the bug, and I'll get to fixing it!
 
+## Thanks for Reading!
 Happy gaming 🚀
