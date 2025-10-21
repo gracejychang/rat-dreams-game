@@ -1,0 +1,74 @@
+# ----------------------------
+# Unity Core Generated Folders
+# ----------------------------
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+UserSettings/
+
+# Crash reports
+sysinfo.txt
+
+# ----------------------------
+# IDE and OS Files
+# ----------------------------
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ----------------------------
+# Version Control
+# ----------------------------
+
+# Uncomment if using the PlasticSCM plugin (Unity's default VCS)
+# .plastic/
+# Ignore Unity Collaborate cache
+.collab/
+
+# ----------------------------
+# Unity 6 Modular Projects
+# ----------------------------
+
+# Packages/ folder in Unity 6 contains embedded packages now.
+# ✅ DO NOT IGNORE Packages/ in Unity 6 modular projects.
+
+# But if you ever use manifest.json–based projects, don't ignore:
+# !Packages/manifest.json
+# !Packages/packages-lock.json
+
+# ----------------------------
+# Optional - Ignore Build Artifacts
+# ----------------------------
+*.apk
+*.aab
+*.exe
+*.app
+*.dll
+*.pdb
+*.mdb
+
+# Ignore generated AssetBundle files
+*.unity3d
+*.bundle
+
+# ----------------------------
+# Rider IDE (JetBrains)
+# ----------------------------
+.idea/
+*.sln.iml
